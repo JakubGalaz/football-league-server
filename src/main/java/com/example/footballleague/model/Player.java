@@ -1,13 +1,14 @@
-package model;
+package com.example.footballleague.model;
 
-import com.sun.javafx.beans.IDProperty;
-import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
 @Document
 public class Player {
 
+    @Transient
+    public static final String SEQUENCE_NAME = "users_sequence";
 
     @Id
     private String id;
@@ -20,6 +21,9 @@ public class Player {
     private Integer assists;
     private Integer yellowCards;
     private Integer redCards;
+
+    public Player() {
+    }
 
     public Player(String id, String name, String surname, Integer age, String club,
                   String position, Integer goals, Integer assists, Integer yellowCards, Integer redCards) {

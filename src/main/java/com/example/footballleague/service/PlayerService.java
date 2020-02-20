@@ -1,6 +1,6 @@
-package service;
+package com.example.footballleague.service;
 
-import model.Player;
+import com.example.footballleague.model.Player;
 
 import java.util.List;
 

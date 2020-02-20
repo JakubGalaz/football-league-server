@@ -1,11 +1,11 @@
-package repository;
+package com.example.footballleague.repository;
 
-import model.Player;
+import com.example.footballleague.model.Player;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 @Repository
 public interface PlayerRepository extends MongoRepository<Player, String> {
-  List<Player> findAll();
+//  List<Player> findAll();
 }

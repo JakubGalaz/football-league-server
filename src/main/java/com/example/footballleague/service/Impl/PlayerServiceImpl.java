@@ -1,10 +1,10 @@
-package service.Impl;
+package com.example.footballleague.service.Impl;
 
 
-import model.Player;
+import com.example.footballleague.model.Player;
+import com.example.footballleague.service.PlayerService;
 import org.springframework.stereotype.Service;
-import repository.PlayerRepository;
-import service.PlayerService;
+import com.example.footballleague.repository.PlayerRepository;
 
 import java.util.List;
 
