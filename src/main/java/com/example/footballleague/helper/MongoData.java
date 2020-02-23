@@ -1,7 +1,12 @@
 package com.example.footballleague.helper;
 
+import com.example.footballleague.model.Goal;
 import com.example.footballleague.model.Player;
+import com.example.footballleague.model.Protocol;
+import com.example.footballleague.model.Team;
 import com.example.footballleague.repository.PlayerRepository;
+import com.example.footballleague.service.ProtocolService;
+import com.example.footballleague.service.TeamService;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +16,14 @@ public class MongoData {
 
     public final PlayerRepository playerRepository;
     public final SequenceGeneratorService sequenceGeneratorService;
+    public final ProtocolService protocolService;
+    public final TeamService teamService;
 
-    public MongoData(PlayerRepository playerRepository, SequenceGeneratorService sequenceGeneratorService) {
+    public MongoData(PlayerRepository playerRepository, SequenceGeneratorService sequenceGeneratorService, ProtocolService protocolService, TeamService teamService) {
         this.playerRepository = playerRepository;
         this.sequenceGeneratorService = sequenceGeneratorService;
+        this.protocolService = protocolService;
+        this.teamService = teamService;
     }
 
     @EventListener(ApplicationReadyEvent.class)
@@ -81,6 +90,28 @@ public class MongoData {
         playerRepository.save(player10);
         playerRepository.save(player11);
         playerRepository.save(player12);
+
+
+        Goal goal1 = new Goal("1", player1, player2, 69);
+        Goal goal2 = new Goal("2", player3, player2, 11);
+        Goal goal3 = new Goal("3", player5, player6, 44);
+         Goal hostGoals[] = {goal1,goal2};
+         Goal guestGoals[] = {goal3};
+         Player hostPlayers[] = {player1,player2,player3};
+         Player guestPlayers[] = {player4,player5,player6,player7};
+
+        Protocol protocol1 = new Protocol("1", "Coco Jambo Warszawa", "Korona Jurkowice", hostGoals, guestGoals,
+                "Szymon Marciniak", hostPlayers, guestPlayers, "Super mecz");
+
+        protocolService.save(protocol1);
+
+
+        Team team1 = new Team("1", "Coco Jambo Warszawa", "Jose Mourinho", "Park de prę", hostPlayers);
+
+        teamService.save(team1);
+
+
+
 
 
 //        Player player2 = new Player("sdsadaaqqwe12", "32", "dsadd", 12, "FCB", "Napastnik", 12,

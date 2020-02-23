@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.footballleague.repository.PlayerRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -27,4 +28,17 @@ public class PlayerServiceImpl implements PlayerService {
     public List<Player> playerList() {
         return playerRepository.findAll();
     }
+
+    @Override
+    public Optional<Player> findFirstById(String id) {
+        return playerRepository.findById(id);
+    }
+
+//    @Override
+//    public void delete(String id) {
+//        Optional<Player> player = playerRepository.findById(id);
+//           playerRepository.delete(player);
+//    }
+
+
 }
