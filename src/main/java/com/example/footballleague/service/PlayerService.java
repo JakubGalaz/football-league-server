@@ -10,4 +10,6 @@ public interface PlayerService {
     List<Player> playerList();
 //    void delete(String id);
     Optional<Player> findFirstById(String id);
+
+    void deletePlayerById(String id);
 }

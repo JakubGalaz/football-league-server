@@ -36,4 +36,11 @@ public class ProtocoleServiceImpl implements ProtocolService {
     public Optional<Protocol> findFirstById(String id) {
         return protocolRepository.findById(id);
     }
+
+    @Override
+    public void deleteProtocolById(String id) {
+        protocolRepository.deleteById(id);
+    }
+
+
 }

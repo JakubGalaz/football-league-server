@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface TeamService {
     Team save(Team team);
     List<Team> teamList();
+    void deleteTeamById(String id);
 
     Optional<Team> findFirstById(String id);
+
 }

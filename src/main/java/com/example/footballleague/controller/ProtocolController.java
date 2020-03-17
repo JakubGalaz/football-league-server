@@ -41,6 +41,13 @@ public class ProtocolController {
     }
 
 
+    @DeleteMapping("/deleteProtocolById/{id}")
+    public void delete(@PathVariable("id") String id){
+
+        protocolService.deleteProtocolById(id);
+
+    }
+
 
 
 

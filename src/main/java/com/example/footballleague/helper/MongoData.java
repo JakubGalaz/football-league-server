@@ -76,6 +76,12 @@ public class MongoData {
         id = String.valueOf(sequenceGeneratorService.generateSequence(Player.SEQUENCE_NAME));
         Player player12 = new Player(id, "Dominik", "Jachaś", 19, "Coco Jambo Warszawa", "Napastnik", 4,
                 12,2,3);
+        id = String.valueOf(sequenceGeneratorService.generateSequence(Player.SEQUENCE_NAME));
+        Player player13 = new Player(id, "Dominik", "Jachaś", 19, "Korona Jurkowice", "Napastnik", 4,
+                12,2,3);
+        id = String.valueOf(sequenceGeneratorService.generateSequence(Player.SEQUENCE_NAME));
+        Player player14 = new Player(id, "Dominik", "Jachaś", 19, "Korona Jurkowice", "Napastnik", 4,
+                12,2,3);
 
 
         playerRepository.save(player1);
@@ -90,6 +96,8 @@ public class MongoData {
         playerRepository.save(player10);
         playerRepository.save(player11);
         playerRepository.save(player12);
+        playerRepository.save(player13);
+        playerRepository.save(player14);
 
 
         Goal goal1 = new Goal("1", player1, player2, 69);
@@ -107,8 +115,11 @@ public class MongoData {
 
 
         Team team1 = new Team("1", "Coco Jambo Warszawa", "Jose Mourinho", "Park de prę", hostPlayers);
+        Team team2 = new Team("2", "Korona Jurkowice", "Carlo Anceloti", "Estadio Sadnitago Berabeu", guestPlayers);
 
         teamService.save(team1);
+        teamService.save(team2);
+
 
 
 

@@ -11,4 +11,6 @@ public interface ProtocolService {
     List<Protocol> protocolList();
 
     Optional<Protocol> findFirstById(String id);
+
+    void deleteProtocolById(String id);
 }

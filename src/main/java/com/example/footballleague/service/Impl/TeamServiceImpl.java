@@ -28,7 +28,14 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public void deleteTeamById(String id) {
+
+         teamRepository.deleteById(id);
+    }
+
+    @Override
     public Optional<Team> findFirstById(String id) {
         return teamRepository.findById(id);
     }
+
 }

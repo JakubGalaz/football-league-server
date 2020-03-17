@@ -1,5 +1,6 @@
 package com.example.footballleague.controller;
 
+import com.example.footballleague.helper.SequenceGeneratorService;
 import com.example.footballleague.model.Player;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,7 @@ public class PlayerController {
     @PostMapping("/savePlayer")
     public ResponseEntity create(@RequestBody Player player)
     {
+
         return ResponseEntity.ok(playerService.save(player));
     }
 
@@ -46,6 +48,13 @@ public class PlayerController {
     @RequestMapping(value = "/showPlayerById/{id}", method = RequestMethod.GET)
     public Optional<Player> showPlayer(@PathVariable("id") String id){
         return playerService.findFirstById(id);
+    }
+
+    @DeleteMapping("/deletePlayerById/{id}")
+    public void delete(@PathVariable("id") String id){
+
+        playerService.deletePlayerById(id);
+
     }
 
 
