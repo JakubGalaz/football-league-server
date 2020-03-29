@@ -1,9 +1,12 @@
 package com.example.footballleague.model;
 
+import org.springframework.data.annotation.Id;
+
 public class Goal {
 
+    @Id
     private String id;
-    private Player scorer;
+    private Player scorrer;
     private Player assistant;
     private Integer minute;
 
@@ -11,9 +14,9 @@ public class Goal {
 
     }
 
-    public Goal(String id, Player scorer, Player assistant, Integer minute) {
+    public Goal(String id, Player scorrer, Player assistant, Integer minute) {
         this.id = id;
-        this.scorer = scorer;
+        this.scorrer = scorrer;
         this.assistant = assistant;
         this.minute = minute;
     }
@@ -30,11 +33,11 @@ public class Goal {
     }
 
     public Player getScorer() {
-        return scorer;
+        return scorrer;
     }
 
     public void setScorer(Player scorer) {
-        this.scorer = scorer;
+        this.scorrer = scorer;
     }
 
     public Player getAssistant() {

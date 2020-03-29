@@ -21,7 +21,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player save(Player player) {
-        return null;
+        return playerRepository.save(player);
     }
 
     @Override

@@ -6,6 +6,59 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Protocol {
 
+    @Id
+    private String id;
+    private String refree;
+    private String host;
+    private String guest;
+    private String date;
+    private Card[] hostCards;
+    private Card[] guestCards;
+    private Goal[] hostGoals;
+    private Goal[] guestGoals;
+    private Player[] hostPlayers;
+    private Player[] guestPlayers;
+    private PlayerChange[] guestChange;
+    private PlayerChange[] hostChange;
+    private String comments;
+
+    public Protocol(String id, String refree, String host, String guest, String date, String comments) {
+        this.id = id;
+        this.refree = refree;
+        this.host = host;
+        this.guest = guest;
+        this.date = date;
+        this.comments = comments;
+    }
+
+
+
+    public Protocol(String id, String refree, String host, String guest, String date, Card[] hostCards, Card[] guestCards, Goal[] hostGoals, Goal[] guestGoals, Player[] hostPlayers, Player[] guestPlayers, PlayerChange[] guestChange, PlayerChange[] hostChange, String comments) {
+        this.id = id;
+        this.refree = refree;
+        this.host = host;
+        this.guest = guest;
+        this.date = date;
+        this.hostCards = hostCards;
+        this.guestCards = guestCards;
+        this.hostGoals = hostGoals;
+        this.guestGoals = guestGoals;
+        this.hostPlayers = hostPlayers;
+        this.guestPlayers = guestPlayers;
+        this.guestChange = guestChange;
+        this.hostChange = hostChange;
+        this.comments = comments;
+    }
+
+
+
+    public Protocol()
+    {
+
+    }
+
+
+
     public String getId() {
         return id;
     }
@@ -47,11 +100,11 @@ public class Protocol {
     }
 
     public String getReferee() {
-        return referee;
+        return refree;
     }
 
     public void setReferee(String referee) {
-        this.referee = referee;
+        this.refree = referee;
     }
 
     public Player[] getHostPlayers() {
@@ -77,34 +130,6 @@ public class Protocol {
     public void setComments(String comments) {
         this.comments = comments;
     }
-
-    public Protocol(String id, String host, String guest, Goal[] hostGoals, Goal[] guestGoals, String referee, Player[] hostPlayers, Player[] guestPlayers, String comments) {
-        this.id = id;
-        this.host = host;
-        this.guest = guest;
-        this.hostGoals = hostGoals;
-        this.guestGoals = guestGoals;
-        this.referee = referee;
-        this.hostPlayers = hostPlayers;
-        this.guestPlayers = guestPlayers;
-        this.comments = comments;
-    }
-
-    public Protocol()
-    {
-
-    }
-
-    @Id
-    private String id;
-    private String host;
-    private String guest;
-    private Goal[] hostGoals;
-    private Goal[] guestGoals;
-    private String referee;
-    private Player[] hostPlayers;
-    private Player[] guestPlayers;
-    private String comments;
 
 
 

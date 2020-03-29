@@ -18,11 +18,13 @@ public class TeamController {
 
 
     public TeamController(TeamService teamService) {
+
         this.teamService = teamService;
     }
 
     @PostMapping("/saveTeam")
     public ResponseEntity create(@RequestBody Team team){
+        System.out.println("CREATE Team");
         return ResponseEntity.ok(teamService.save(team));
     }
 

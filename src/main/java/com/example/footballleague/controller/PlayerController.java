@@ -31,7 +31,7 @@ public class PlayerController {
     @PostMapping("/savePlayer")
     public ResponseEntity create(@RequestBody Player player)
     {
-
+        System.out.println("CREATE PLAYER");
         return ResponseEntity.ok(playerService.save(player));
     }
 

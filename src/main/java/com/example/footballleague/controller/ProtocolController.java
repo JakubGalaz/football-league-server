@@ -23,7 +23,10 @@ public class ProtocolController {
     @PostMapping("/saveProtocol")
     public ResponseEntity create(@RequestBody Protocol protocol)
     {
-        return ResponseEntity.ok(protocolService.save(protocol));
+
+        System.out.println("create protocol");
+
+   return ResponseEntity.ok(protocolService.save(protocol));
 
     }
 

@@ -108,10 +108,7 @@ public class MongoData {
          Player hostPlayers[] = {player1,player2,player3};
          Player guestPlayers[] = {player4,player5,player6,player7};
 
-        Protocol protocol1 = new Protocol("1", "Coco Jambo Warszawa", "Korona Jurkowice", hostGoals, guestGoals,
-                "Szymon Marciniak", hostPlayers, guestPlayers, "Super mecz");
 
-        protocolService.save(protocol1);
 
 
         Team team1 = new Team("1", "Coco Jambo Warszawa", "Jose Mourinho", "Park de prę", hostPlayers);
