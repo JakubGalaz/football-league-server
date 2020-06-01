@@ -32,6 +32,7 @@ public class TeamController {
     public List<Team> teamList(){return teamService.teamList();}
 
     @RequestMapping(value = "/showTeamById/{id}", method = RequestMethod.GET)
+
     public Optional<Team> showTeam(@PathVariable("id") String id){
         return teamService.findFirstById(id);
     }

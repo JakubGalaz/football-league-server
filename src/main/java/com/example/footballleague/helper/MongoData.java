@@ -111,11 +111,14 @@ public class MongoData {
 
 
 
-        Team team1 = new Team("1", "Coco Jambo Warszawa", "Jose Mourinho", "Park de prę", hostPlayers);
-        Team team2 = new Team("2", "Korona Jurkowice", "Carlo Anceloti", "Estadio Sadnitago Berabeu", guestPlayers);
+        Team team1 = new Team("1", "Coco Jambo Warszawa", "Jose Mourinho", "Park de prę", hostPlayers, 1, 5, 6, 1, 1);
+        Team team2 = new Team("2", "Korona Jurkowice", "Carlo Anceloti", "Estadio Sadnitago Berabeu", guestPlayers,1,2,4,5,6);
+        Team team3 = new Team("3", "FC Kielce", "Pepe Głardiola", "Arena", guestPlayers,1,4,4,5,6);
 
         teamService.save(team1);
         teamService.save(team2);
+        teamService.save(team3);
+
 
 
 
