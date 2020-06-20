@@ -28,7 +28,7 @@ public class MongoData {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-
+/*
      playerRepository.deleteAll();
         System.out.println("Add Player");
 
@@ -119,9 +119,11 @@ public class MongoData {
         teamService.save(team2);
         teamService.save(team3);
 
+        Team team4 = new Team("3", "FC Kielce", "Pepe pan dziobak", "Arena", guestPlayers,1,4,4,5,6);
 
+        teamService.update(team4);
 
-
+*/
 
 
 

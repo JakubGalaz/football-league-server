@@ -4,25 +4,24 @@ import org.springframework.data.annotation.Id;
 
 public class Goal {
 
+
     @Id
     private String id;
-    private Player scorrer;
+    private Player scorer;
     private Player assistant;
     private Integer minute;
 
-    public Goal() {
 
-    }
-
-    public Goal(String id, Player scorrer, Player assistant, Integer minute) {
+    public Goal(String id, Player scorer, Player assistant, Integer minute) {
         this.id = id;
-        this.scorrer = scorrer;
+        this.scorer = scorer;
         this.assistant = assistant;
         this.minute = minute;
     }
 
+    public Goal() {
 
-
+    }
 
     public String getId() {
         return id;
@@ -33,11 +32,11 @@ public class Goal {
     }
 
     public Player getScorer() {
-        return scorrer;
+        return scorer;
     }
 
     public void setScorer(Player scorer) {
-        this.scorrer = scorer;
+        this.scorer = scorer;
     }
 
     public Player getAssistant() {
@@ -55,6 +54,10 @@ public class Goal {
     public void setMinute(Integer minute) {
         this.minute = minute;
     }
+
+
+
+
 
 
 }

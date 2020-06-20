@@ -45,5 +45,10 @@ public class TeamController {
 
     }
 
+    @PutMapping("/updateTeam")
+    public Team put(@RequestBody Team team){
+                return  this.teamService.update(team);
+    }
+
 
 }

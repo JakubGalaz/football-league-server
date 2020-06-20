@@ -32,8 +32,9 @@ private final FavouritePositionService favouritePositionService;
 
 
 
-@DeleteMapping("/deleteFavouritePosiotion/{id}")
+@DeleteMapping("/deleteFavouritePosition/{id}")
     public void delete(@PathVariable("id") String id){
+        System.out.println("delete favourite position");
         favouritePositionService.deleteFavouritePositionById(id);
 }
 

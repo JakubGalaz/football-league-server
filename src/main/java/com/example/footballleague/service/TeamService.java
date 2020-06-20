@@ -9,6 +9,7 @@ public interface TeamService {
     Team save(Team team);
     List<Team> teamList();
     void deleteTeamById(String id);
+    Team update(Team team);
 
     Optional<Team> findFirstById(String id);
 

@@ -34,6 +34,11 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public Team update(Team team) {
+     return teamRepository.save(team);
+    }
+
+    @Override
     public Optional<Team> findFirstById(String id) {
         return teamRepository.findById(id);
     }
